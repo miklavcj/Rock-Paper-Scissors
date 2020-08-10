@@ -1,13 +1,16 @@
 const btnr = document.querySelector(".btnr");
 const btnp = document.querySelector(".btnp");
 const btns = document.querySelector(".btns");
+const buttons = document.querySelectorAll(".btn");
 
 let result = document.querySelector("#result");
 let pScore = document.querySelector("#pScore");
 let cScore = document.querySelector("#cScore");
+let rounds = document.querySelector("#rounds");
 
 let playerScore = 0;
 let compScore = 0;
+let roundScore = 0;
 
 
 const compOptions = ["r","p","s"];
@@ -63,6 +66,14 @@ btns.onclick = function() {
 	}
 };
 
+
+
+buttons.forEach((button) => {
+	  button.addEventListener('click', () => {
+    	roundScore++;
+			rounds.textContent = roundScore;
+  });
+});
 
 
 
